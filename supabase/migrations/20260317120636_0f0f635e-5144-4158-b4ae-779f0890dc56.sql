@@ -1,0 +1,1 @@
+ALTER TABLE public.scenes ADD COLUMN background_blur double precision NOT NULL DEFAULT 0;

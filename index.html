@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoleArc - TRPG用シーン演出ツール</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/RAicon-180.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="theme-color" content="#0f1117" />
+    <meta name="description" content="TRPG配信向けのシーン管理・演出ツール">
+    
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="RoleArc - TRPG用シーン演出ツール">
+  <meta name="twitter:title" content="RoleArc - TRPG用シーン演出ツール">
+  <meta property="og:description" content="TRPG配信向けのシーン管理・演出ツール">
+  <meta name="twitter:description" content="TRPG配信向けのシーン管理・演出ツール">
+  <meta property="og:image" content="/RAicon-512.png">
+  <meta name="twitter:image" content="/RAicon-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Service Worker: fetchを素通しすることでiframe(reactive立ち絵)等のリソースに
+      // ブラウザHTTPキャッシュを効かせ、表情切り替え(URL差し替え)を高速化する。
+      // ※コンソールに一部CORSエラーが出るが表示・動作に実害はない（キャッシュ高速化を優先）。
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
+  </body>
+</html>
